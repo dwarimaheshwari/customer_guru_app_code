@@ -1,0 +1,38 @@
+<div class="container"><br>
+<div class="row" *ngFor="let u of user">
+    <div class="col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading"*ngIf="u.login">{{u.name}}<small>({{u.login}})</small></div>
+        <div class="panel-body">
+        <div class="row">
+          <div class="col-md-3"><img src="{{u.avatar_url}}" class="img-responsive"></div>
+          <div class="col-md-5">
+            <ul class="list-group" *ngFor="let u of user" >
+                <li *ngIf="u.email" class="list-group-item">Email:{{u.email}}</li>
+                <li *ngIf="u.bio" class="list-group-item"><strong>Bio:</strong>{{u.bio}}</li>
+                <li *ngIf="u.hireable" class="list-group-item">Available For Hire</li>
+                <li *ngIf="u.blog" class="list-group-item"><strong>Blog Url:</strong><a href="{{u.blog}}">{{u.blog}}</a></li>
+                <li *ngIf="u.email" class="list-group-item">{{u.email}}</li>
+            </ul>
+          </div>
+          <div class="col-md-4">
+          <p>
+            <span class="label label-default">{{u.followers}}  Followers </span>
+            <span class="label label-default">{{u.following}}  Following </span>
+            <span class="label label-default">{{u.public_gists}}  Public gist </span>
+            <span class="label label-default">{{u.public_repos}}  Public reps </span>
+          </p>
+          <div class="panel panel-default">
+              <div class="panel-heading">Repos</div>
+              <div class="panel-body" *ngFor="let rep of repos">
+                <p>{{rep.name}} <a href="{{rep.html_url}}">click</a></p>
+              </div>
+            </div>
+          </div>
+
+        </div>  
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

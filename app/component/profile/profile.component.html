@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row" style="padding:10px;">
+    <div class="col-md-12">
+      <form class="form-inline">
+        <div class="form-group"style="width:90%;">
+          <input type="text" class="form-control" [(ngModel)]="username" name="username" style="width:98%;">
+        </div>
+        <button type="button" class="btn btn-primary" (click)="setname()">Search</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col-md 12">
+      <ul class="list-group"*ngFor="let pro of profile">
+         <li class="list-group-item">
+           <div class="row">
+            <div class="col-md-4"> 
+            <img src="{{pro.avatar_url}}" class="img responsive"
+          style="width:200px;">
+        </div>
+         <div class="col-md-8">
+          <a style="cursor:pointer;" [routerLink]="['/user',pro.login]">{{pro.login}}</a>
+        </div>
+        </div>  
+        </li> 
+      </ul>
+    </div>
+  </div>
+</div>
+
